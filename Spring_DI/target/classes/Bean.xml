@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="person" class="com.person.person">
+<property name="person_name" value="Rahil"></property>
+<property name="person_age" value="16"></property>
+</bean>
+ 
+ <bean id="phone" class="com.phone.phone">
+<property name="phone" value="Nokia"></property>
+<property name="phone_model" value="2626"></property>
+<property name="phone_type" value="Keypad"></property>
+<property name="phone_year" value="1997"></property>
+<property name="person" ref="person"></property>
+ </bean>
+ 
+</beans>
