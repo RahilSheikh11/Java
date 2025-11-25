@@ -49,6 +49,11 @@ public class UserDaoImpl implements UserDao {
 	public void updateuser(User user) {
 		String sql = "update cafe_app set username=?, password=? where id=?";
 		jdbcTemplate.update(sql,new Object[] {user.getUsername(), user.getPassword(), user.getId()});
-		
 	}
-}
+	
+	public void deleteuser(int id) {
+		String sql = "delete from cafe_app where id=?";
+		jdbcTemplate.update(sql, id);
+	}
+	}
+

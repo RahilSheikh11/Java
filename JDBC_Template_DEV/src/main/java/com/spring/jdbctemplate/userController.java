@@ -52,9 +52,14 @@ public String updateusers(@ModelAttribute User user,HttpSession session) {
 	userService.updateuser(user);
 	session.setAttribute("message", "Updated successfully");
 	return "redirect:/showusers";
-
 }
 
+@RequestMapping(value = "/delete", method = RequestMethod.GET)
+public String deleteusers(@RequestParam("id")int id, HttpSession session) {
+userService.deleteuser(id);
+session.setAttribute("message", "Delete successfully");
+return "redirect:/showusers";
+}
 }
 	
 
